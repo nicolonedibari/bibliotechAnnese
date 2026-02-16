@@ -1,46 +1,67 @@
-version: '3.8'
+version: '3.9'
 
 services:
   web:
-    image: php:8.2-apache
-    container_name: biblioteca_web
+    build: .
+    container_name: bibliotech-web
     ports:
-      - "8080:80"
+      - "9080:80"
     volumes:
       - ./src:/var/www/html
     depends_on:
       - db
       - mailpit
     environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
       - SMTP_HOST=mailpit
       - SMTP_PORT=1025
+    networks:
+      - bibliotech-network
 
   db:
-    image: mysql:8
-    container_name: biblioteca_db
+    image: mysql:8.0
+    container_name: bibliotech-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: biblioteca
-    ports:
-      - "3306:3306"
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: bibliotech_db
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
     volumes:
+      - db_data:/var/lib/mysql
       - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
+    networks:
+      - bibliotech-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: biblioteca_phpmyadmin
+    container_name: bibliotech-phpmyadmin
+    restart: always
     ports:
-      - "8081:80"
+      - "9081:80"
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: root
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+      UPLOAD_LIMIT: 300M
     depends_on:
       - db
+    networks:
+      - bibliotech-network
 
   mailpit:
     image: axllent/mailpit
-    container_name: biblioteca_mailpit
+    container_name: bibliotech-mailpit
+    restart: always
     ports:
-      - "8025:8025"
-      - "1025:1025"
+      - "9082:8025"   # interfaccia web mail
+      - "1025:1025"   # porta SMTP
+    networks:
+      - bibliotech-network
+
+volumes:
+  db_data:
+
+networks:
+  bibliotech-network:
+    driver: bridge
