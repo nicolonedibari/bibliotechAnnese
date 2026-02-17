@@ -27,3 +27,5 @@ $stmt->execute();
 $conn->commit();
 
 header("Location: libri.php");
+
+?>

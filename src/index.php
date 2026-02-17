@@ -12,3 +12,5 @@ if ($_SESSION['ruolo'] === "bibliotecario") {
     header("Location: libri.php");
 }
 exit();
+
+?>

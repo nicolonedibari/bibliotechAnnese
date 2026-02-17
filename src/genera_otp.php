@@ -64,10 +64,10 @@ if ($stmt->execute()) {
         header("Location: verifica_otp.php");
         exit();
     } else {
-        echo "Errore: Mailpit non raggiungibile. Verifica che il container sia attivo.";
+        echo "Errore: Mailpit non raggiungibile.";
     }
 
 } else {
-    echo "Errore nella creazione della sessione OTP.";
+    echo "Errore nella creazione del codice OTP.";
 }
 ?>

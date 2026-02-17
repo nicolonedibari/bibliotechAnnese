@@ -16,3 +16,4 @@ WHERE idLibro = (SELECT idLibro FROM prestiti WHERE idPrestito=$idPrestito)
 $conn->commit();
 
 header("Location: gestione_restituzioni.php");
+?>

@@ -49,10 +49,10 @@ CREATE TABLE sessioni (
 -- $2y$10$wH7yK3p1fM9zV8QxT4s5eOVzYkL1n2p3q4r5s6t7u8v9w0xYzA1B2
 
 INSERT INTO utenti (nome, cognome, email, passwordHash, ruolo) VALUES
-('Mario','Rossi','mario@mail.com','$2y$10$wH7yK3p1fM9zV8QxT4s5eOVzYkL1n2p3q4r5s6t7u8v9w0xYzA1B2','studente'),
-('Luca','Bianchi','luca@mail.com','$2y$10$wH7yK3p1fM9zV8QxT4s5eOVzYkL1n2p3q4r5s6t7u8v9w0xYzA1B2','studente'),
-('Anna','Verdi','anna@mail.com','$2y$10$wH7yK3p1fM9zV8QxT4s5eOVzYkL1n2p3q4r5s6t7u8v9w0xYzA1B2','studente'),
-('Admin','Biblioteca','admin@mail.com','$2y$10$wH7yK3p1fM9zV8QxT4s5eOVzYkL1n2p3q4r5s6t7u8v9w0xYzA1B2','bibliotecario');
+('Mario','Rossi','mario@mail.com','$2y$10$q2lq.cI2VDePS64EI2HasuCYCGIrjWxgmYq.UfwbK113zyAtxASGe','studente'),
+('Luca','Bianchi','luca@mail.com','$2y$10$L0UKikflV/7WQvcv/UIdyeJJN7i/FBIk6Ulddu7QEJa1.opk3fiSe','studente'),
+('Anna','Verdi','anna@mail.com','$2y$10$y5ud.9cL02DZzQgUkD/52.gqGxvCXbeYZsPRSggxcfjxcZFvIF28C','studente'),
+('Admin','Biblioteca','admin@mail.com','$2y$10$WdT7cadHJ3BvLCpWtMHda.Fl/BfXV9FwJHL1OMKi0UtqAMOvkhhQK','bibliotecario');
 
 -- 5 LIBRI
 
