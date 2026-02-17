@@ -29,12 +29,11 @@ services:
       MYSQL_PASSWORD: mypassword
     volumes:
       - db_data:/var/lib/mysql
-      - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
     networks:
       - bibliotech-network
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:latest
     container_name: bibliotech-phpmyadmin
     restart: always
     ports:
