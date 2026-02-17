@@ -61,4 +61,4 @@ INSERT INTO libri (titolo, autore, isbn, copieTotali, copieDisponibili) VALUES
 ('I fiori del male','Charles Baudelaire','9788845292613',3,3),
 ('Uno, nessuno e centomila','Luigi Pirandello','9788807901517',4,4),
 ('La coscienza di Zeno','Italo Svevo','9788845255120',6,6),
-('Il Signore degli Anelli','J.R.R. Tolkien','9788845295522',2,2);
+('Fosca','Igino Ugo Tarchetti','9788845295522',2,2);
