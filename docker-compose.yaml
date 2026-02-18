@@ -24,7 +24,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: bibliotech_db
+      MYSQL_DATABASE: biblioteca
       MYSQL_USER: myuser
       MYSQL_PASSWORD: mypassword
     volumes:

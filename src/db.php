@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("db", "myuser", "mypassword", "bibliotech_db");
+$conn = new mysqli("db", "myuser", "mypassword", "biblioteca");
 
 if ($conn->connect_error) {
     die("Errore connessione DB");
